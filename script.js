@@ -20,7 +20,8 @@ form.addEventListener("submit", (e) => {
     .split("\n")
     .filter((item) => item !== "")
     .map((item) => item.split(" ").filter((item) => item !== ""))
-    .flat();
+    .flat()
+    .map(item => item.toLowerCase()); // отут зробив так, що DO i do - це не 2 унікальних слова
 
   console.log(arrayOfWords);
   const setOfWords = new Set(arrayOfWords);
